@@ -15,7 +15,6 @@ if (process.env.SERVER_PORT != undefined) {
     port = process.env.SERVER_PORT
 }
 
-
 // vvv Set up mongoose connection
 const mongoose = require('mongoose');
 // REVIEW: register schemas
