@@ -1,0 +1,29 @@
+{
+  "name": "adpay",
+  "version": "0.1.0",
+  "description": "Pays the view of an ad in ETH",
+  "main": "app.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/web3devs/adPay.git"
+  },
+  "keywords": [
+    "Ethereum"
+  ],
+  "author": "web3devs",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/web3devs/adPay/issues"
+  },
+  "homepage": "https://github.com/web3devs/adPay#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "chalk": "^2.4.1",
+    "express": "^4.16.3",
+    "mongoose": "^5.2.17",
+    "superagent": "^4.0.0-beta.5"
+  }
+}
