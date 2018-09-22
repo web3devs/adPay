@@ -8,9 +8,6 @@ const ad_controller = require('../controllers/ad.controller');
 // a simple coincap url to check that all of our files are communicating correctly.
 router.get('/test', ad_controller.test);
 
-// pay out some ether
-router.get('/pay', ad_controller.pay);
-
 // // search for record by ID
 // router.post('/find', mongo_controller.find_by_id);
 //

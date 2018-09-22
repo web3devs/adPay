@@ -23,7 +23,3 @@ exports.test = async function ( req, res ) {
     }
   res.send (response);
 }
-
-exports.pay = async function (req, res) {
-  res.send ("Pay function");
-}

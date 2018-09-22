@@ -1,5 +1,6 @@
 const chalk = require('chalk')
 const getWeb3 = require('../utils/getWeb3');
+const web3 = require('web3');
 let abi = require('../abis/abi.js');
 let address = require('../addresses/address');
 let contract;
@@ -19,10 +20,11 @@ getWeb3
 exports.get_balance = async function (req, res) {
   getWeb3
   .then( results => {
-    // contract: results.web3.eth.contract(abi).at(address);
-    console.log(results);
+    // contract = results.web3.eth.contract(abi).at(address);
+    contract = results.eth.contract(abi.abi).at(address.address);
+    console.log(contract.getBalance());
     res.status(results.status >= 100 && results.status < 600 ? err.code : 500)
-      .send("results");
+      .send(contract.getBalance());
   })
   .catch( error => {
     console.log(chalk.white("oops in get_balance"));
@@ -30,4 +32,9 @@ exports.get_balance = async function (req, res) {
     res.status(error.status >= 100 && error.status < 600 ? err.code : 500)
       .send(JSON.stringify(error));
   })
+}
+
+exports.pay = async function (req, res) {
+
+  res.send ("Pay function");
 }

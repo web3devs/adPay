@@ -4,6 +4,5 @@ const rpc_controller = require ('./rpc.controller');
 
 //Simple version, without validation or sanitation
 exports.home = function ( req, res ) {
-    let web3Promise;
-    res.send ( rpc_controller.get_web3() );
+    res.send ( "routes: /balance(get) /pay(post) /ad/test(get)" );
 };
