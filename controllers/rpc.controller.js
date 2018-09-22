@@ -33,3 +33,8 @@ exports.get_balance = async function (req, res) {
       .send(JSON.stringify(error));
   })
 }
+
+exports.pay = async function (req, res) {
+
+  res.send ("Pay function");
+}
