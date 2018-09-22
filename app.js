@@ -15,6 +15,8 @@ if (process.env.SERVER_PORT != undefined) {
     port = process.env.SERVER_PORT
 }
 
+const getWeb3 = require('./utils/getWeb3');
+
 
 // vvv Set up mongoose connection
 const mongoose = require('mongoose');
