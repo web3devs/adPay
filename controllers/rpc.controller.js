@@ -35,6 +35,18 @@ exports.get_balance = async function (req, res) {
 }
 
 exports.pay = async function (req, res) {
-
-  res.send ("Pay function");
+  getWeb3
+  .then( results => {
+    contract = results.eth.contract(abi.abi).at(address.address);
+    console.log(req.body.address1);
+    console.log(req.body.address2);
+    res.status(results.status >= 100 && results.status < 600 ? err.code : 500)
+      .send(req.body);
+  })
+  .catch( error => {
+    console.log(chalk.white("oops in pay"));
+    console.log(error);
+    res.status(error.status >= 100 && error.status < 600 ? err.code : 500)
+      .send(JSON.stringify(error));
+  })
 }
