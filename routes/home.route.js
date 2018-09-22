@@ -10,4 +10,6 @@ router.get('/', home_controller.home);
 
 router.get('/balance', rpc_controller.get_balance);
 
+router.post('/pay', rpc_controller.pay);
+
 module.exports = router;
