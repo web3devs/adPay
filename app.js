@@ -69,10 +69,26 @@ app.use('/ad',
             next();
         }
     },
- ad);
+  ad);
 app.use('/', home);
 
-app.use('/webhook', webhook);
+app.use('/webhook',
+  (req, res, next) => {
+      res.header('Access-Control-Allow-Credentials', true);
+      res.header(
+          'Access-Control-Allow-Headers',
+          'content-type, authorization, content-length, x-requested-with, accept, origin'
+      );
+      res.header('Access-Control-Allow-Methods', 'POST, GET, OPTIONS');
+      res.header('Allow', 'POST, GET, OPTIONS');
+      res.header('Access-Control-Allow-Origin', '*');
+      if (req.method === 'OPTIONS') {
+          res.sendStatus(200);
+      } else {
+          next();
+      }
+  },
+  webhook);
 
 app.listen(port, () => {
     console.log('Server is up and running on port number ' + port);
