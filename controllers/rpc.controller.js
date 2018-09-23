@@ -43,11 +43,12 @@ exports.get_balance = async function (req, res) {
   // })
 }
 
-exports.pay = async function (req, res) {
+exports.pay = async function (receiverAddress) {
     contract = new web3.eth.Contract(abi.abi, address.address);
     console.log(req.body.address1);
     // console.log(req.body.address2);
-    let address1 = req.body.address1;
+    // let address1 = req.body.address1; // not used
+    let address1 = receiverAddress;
     // let address2 = req.body.address2;
     address1 = address1.split('x');
     // address2 = address2.split('x');
