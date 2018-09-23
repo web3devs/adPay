@@ -7,7 +7,8 @@ const wh_controller = require('../controllers/webhook.controller');
 
 /* webhook for formsUrls */
 // (post) https://api.typeform.com/forms/{form_id}/webhooks/{tag}
-router.route('/forms/:formId/webhooks/:tag')
+// 
+router.route('/forms')
   .post(wh_controller.submitForm)
 
 
