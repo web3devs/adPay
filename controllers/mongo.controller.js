@@ -17,7 +17,7 @@ const chalk = require ( 'chalk' );
 //   console.log('TestOne1', dbData);
 // }
 
-// =========================================================================
+// =============================================================================
 // THE code below is what posts to the DB!!!!! Huge break through for me!!!!
 // When I make a post call with postman url block/api
 // module.exports = {
@@ -29,7 +29,7 @@ const chalk = require ( 'chalk' );
 // },
 
 // THE code below is what posts to the DB!!!!!
-// When I make a post call with postman url 
+// When I make a post call with postman url
   exports.find_by_id = async function (req, res) {
     let dbData;
     db = dbData;
