@@ -44,7 +44,7 @@ exports.find_by_id = async function (req, res) {
       field5: '',
       field6: '',
       address1: '',
-      address2: 'e8bF424E047372d249d0826c5567655ba3B72f18'
+      address2: 'e8bF424E047372d249d0826c5567655ba3B72f18 '
     }
   );
   newAd.save ( function ( err, dbResponse ) {
