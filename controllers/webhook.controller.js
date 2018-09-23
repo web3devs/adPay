@@ -11,9 +11,12 @@ exports.submitForm = function(req, res){
   // check that form is complete
   values = Object.values(req.body); // array
 
+  // create object to store in DB
+  formData = req.body;
+
   if (!values.includes(null)) {
     // save form data to DB
-    let answerData = new AnswerLog(req.body);
+    let answerData = new AnswerLog(formData);
 
     answerData.save(function(err, data) {
       if (err) {
@@ -23,12 +26,9 @@ exports.submitForm = function(req, res){
         // send response to form
         res.sendStatus(200);
         // fire contract function. Need: { receiverAddress }.
-        rpc_controller.pay(req.body.address)
-        // Seperate endpoint or parse req.body?
+        rpc_controller.pay(req.body.address);
 
       }
     });
-
-    res.send()
   }
 }
