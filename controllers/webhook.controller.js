@@ -19,8 +19,9 @@ exports.submitForm = function(req, res){
         // send response to typeform
         res.sendStatus(200);
         // fire contract function. Need: { receiverAddress }.
+
         // Seperate endpoint or parse req.body?
-        
+
       }
     });
 

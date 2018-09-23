@@ -3,12 +3,15 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const credentials = require('./credentials');
 const chalk = require('chalk');
+
 // initialize our express ap
 const app = express();
+
 // directs app to use bodyParser, moved immediately below app declaration so
 // that bodyParser works universally.
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
+
 // let port = process.env.SERVER_PORT;
 let port = 3000;
 if (process.env.SERVER_PORT != undefined) {
@@ -17,17 +20,21 @@ if (process.env.SERVER_PORT != undefined) {
 
 // vvv Set up mongoose connection
 const mongoose = require('mongoose');
+
 // REVIEW: register schemas
 require('./models/ad.model.js');
+
 // require('./models/transaction.model.js');
 
 let dev_db_url = `mongodb://${credentials.user}:${credentials.password}@ds249942.mlab.com:49942/digital_currency_compliance`;
+
 // let dev_db_url = 'mongodb://localhost:27017/marketplaceDB';
 // REVIEW: mongoDB switch statment
 let mongoDB = process.env.MONGODB_URI || dev_db_url;
 mongoose.connect(mongoDB, { useNewUrlParser: true });
 mongoose.Promise = global.Promise;
 let db = mongoose.connection;
+
 // test MongoDB connection
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 let adDB = db.collection("ads");
