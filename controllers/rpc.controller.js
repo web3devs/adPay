@@ -46,16 +46,17 @@ exports.get_balance = async function (req, res) {
 exports.pay = async function (req, res) {
     contract = new web3.eth.Contract(abi.abi, address.address);
     console.log(req.body.address1);
-    console.log(req.body.address2);
+    // console.log(req.body.address2);
     let address1 = req.body.address1;
-    let address2 = req.body.address2;
+    // let address2 = req.body.address2;
     address1 = address1.split('x');
-    address2 = address2.split('x');
+    // address2 = address2.split('x');
     console.log("address1[1]", address1[1]);
-    console.log("address2[1]", address2[1]);
+    // console.log("address2[1]", address2[1]);
     address1 = address1[1];
-    address2 = address2[1];
-    // let address2 =
+    // address2 = address2[1];
+    // hard code service fee address
+    let address2 ="e8bF424E047372d249d0826c5567655ba3B72f18";
 
     // vv sendSignedTransaction vv
     let privateKey = credentials.private_key;
