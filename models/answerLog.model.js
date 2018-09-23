@@ -3,6 +3,7 @@ const Schema = mongoose.Schema;
 
 let AnswerLogSchema = new Schema({
 
+    account: { type: String, required: true, max: 64 },
     familiarity: { type: String, required: true, max: 64 },
     comesToMind: { type: String, required: true, max: 64 },
     checkedValues: { type: Array, required: true },
