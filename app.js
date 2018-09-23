@@ -35,8 +35,13 @@ let adDB = db.collection("ads");
 
 // Imports routes for the products
 const ad = require('./routes/ad.route.js');
+
 // const transaction = require('./routes/transaction.route.js');
 const home = require('./routes/home.route.js');
+
+// webhook route
+const webhook = require('./routes/webhook.route.js');
+
 // directs app to use var api for route api
 app.use('/ad',
     (req, res, next) => {
@@ -56,6 +61,8 @@ app.use('/ad',
     },
  ad);
 app.use('/', home);
+
+app.use('/webhook', webhook);
 
 app.listen(port, () => {
     console.log('Server is up and running on port number ' + port);
