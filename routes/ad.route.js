@@ -14,6 +14,9 @@ router.post('/find', mongo_controller.find_by_id);
 //
 // // return list of all objects
 router.post('/findAll', mongo_controller.find_all);
+
+// post to the DB
+router.post('/new', mongo_controller.new_transaction);
 //
 // // this GETs the infura api Ethereum Block Data
 // router.get('/infura', account_controller.infura);
