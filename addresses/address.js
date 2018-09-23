@@ -1,1 +1,1 @@
-exports.address = "0xDa7ADBe0f681C6a05cC57852466dd8307a04a29e";
+exports.address = "0xc69641aaFA3E75b20fF022f42027FA52135d77E3";
