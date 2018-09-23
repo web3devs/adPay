@@ -22,7 +22,10 @@ if (process.env.SERVER_PORT != undefined) {
 const mongoose = require('mongoose');
 
 // REVIEW: register schemas
-require('./models/ad.model.js');
+require('./models/ad.model');
+require('./models/answerLog.model');
+// require('./models/marketer.model');
+// require('./models/publisher.model');
 
 // require('./models/transaction.model.js');
 

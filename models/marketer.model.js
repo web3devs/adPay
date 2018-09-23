@@ -7,8 +7,8 @@ let MarketerSchema = new Schema({
     email: { type: String, required: true, max: 64 },
     contractAddress: { type: String, required: false, max: 64 },
     configObject: {
-      payableAmount: Decimal128,
-      accountTier: String,
+      payableAmount: {type: Number},
+      accountTier: {type: String},
 
     },
     creativeUrl: { type: String, required: false, max: 64 },
