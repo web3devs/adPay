@@ -9,10 +9,10 @@ exports.submitForm = function(req, res){
   console.log(req.body); // object
 
   // check that form is complete
-  values = Object.values(req.body); // array
+  let values = Object.values(req.body); // array
 
   // create object to store in DB
-  formData = req.body;
+  let formData = req.body;
 
   if (!values.includes(null)) {
     // save form data to DB
@@ -26,7 +26,7 @@ exports.submitForm = function(req, res){
         // send response to form
         res.sendStatus(200);
         // fire contract function. Need: { receiverAddress }.
-        rpc_controller.pay(req.body.address);
+        rpc_controller.pay(req.body.account);
 
       }
     });
