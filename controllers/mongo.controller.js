@@ -17,11 +17,7 @@ exports.find_by_id = async function (req, res) {
   console.log('TestOne1', dbData);
 }
 
-<<<<<<< HEAD
-// =============================================================================
-=======
 // ===========================================================================
->>>>>>> david
 // THE code below is what posts to the DB!!!!! Huge break through for me!!!!
 // When I make a post call with postman url block/api
 // module.exports = {
@@ -34,20 +30,8 @@ exports.find_by_id = async function (req, res) {
 
 // THE code below is what posts to the DB!!!!!
 // When I make a post call with postman url
-<<<<<<< HEAD
-  exports.find_by_id = async function (req, res) {
-    let dbData;
-    db = dbData;
-    db.Ad.save(web3);
-    res.send(CircularJSON.stringify(web3));
-    request
-      .post('/ad/api')
-      .send({ text: 'mega Mcdonalds monster mayham' })
-    const blockProps = req.body;
-=======
 
 
->>>>>>> david
 
   exports.new_transaction = async function (req, res) {
     let dbData;
@@ -60,7 +44,7 @@ exports.find_by_id = async function (req, res) {
       field5: '',
       field6: '',
       address1: '',
-      address2: ''
+      address2: 'e8bF424E047372d249d0826c5567655ba3B72f18'
     }
   );
   newAd.save ( function ( err, dbResponse ) {
