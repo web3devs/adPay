@@ -45,7 +45,7 @@ exports.get_balance = async function (req, res) {
 
 exports.pay = async function (receiverAddress) {
     contract = new web3.eth.Contract(abi.abi, address.address);
-    console.log(req.body.address1);
+    // console.log(req.body.address1);
     // console.log(req.body.address2);
     // let address1 = req.body.address1; // not used
     let address1 = receiverAddress;
@@ -91,7 +91,7 @@ exports.pay = async function (receiverAddress) {
     // see eth.getTransactionReceipt() for details
     // ^^ sendSignedTransaction ^^
     // res.status(results.status >= 100 && results.status < 600 ? err.code : 500)
-    res.send(req.body);
+    // res.send(req.body);
 
   // .catch( error => {
   //   console.log(chalk.white("oops in pay"));
